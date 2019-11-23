@@ -10,9 +10,6 @@ variable "env_config" {
 	type = "map"
 }
 
-# output "config" {
-# 	value = "${merge(var.global_config, var.env_config)}"
-# }
 
 output "config" {
 	value = "${merge(var.global_config, var.env_config)}"
