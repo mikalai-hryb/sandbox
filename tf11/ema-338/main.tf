@@ -9,11 +9,12 @@ variable "global_config" {
 
 variable "policy" {
   type = "string"
-  default = {}
+  default = ""
 }
 
 variable "env_config" {
   type = "map"
+  default = {}
 }
 
 locals {
@@ -26,6 +27,8 @@ locals {
 
   redis_host     = "${data.aws_elasticache_replication_group.redis_node.primary_endpoint_address}"
 }
+
+data "aws_region" "current" {}
 
 # Redis
 data "aws_secretsmanager_secret" "redis_cluster_name_secret" {
@@ -40,15 +43,14 @@ data "aws_elasticache_replication_group" "redis_node" {
   replication_group_id = "${data.aws_secretsmanager_secret_version.redis_cluster_name.secret_string}"
 }
 
-
-output "config" {
-	value = "${merge(var.global_config, var.env_config)}"
-}
-
-output "policy" {
-	value = "${var.policy}"
-}
-
 output "s_policy" {
 	value = "${data.aws_secretsmanager_secret.redis_cluster_name_secret.policy}"
+}
+
+output "s_string" {
+	value = "${data.aws_secretsmanager_secret_version.redis_cluster_name.secret_string}"
+}
+
+output "region" {
+  value = "${data.aws_region.current.name}"
 }
