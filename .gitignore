@@ -6,3 +6,5 @@
 # Pycharm
 .idea/
 
+# Environment
+.venv
