@@ -23,8 +23,8 @@ namespace Institution
             Console.WriteLine(teacherI.GetAwayFromTheAnswer(studentI));
             Console.WriteLine(studentI.Age);
             // Console.WriteLine(teacherI.Age); // throw an error
-            studentI.Warning();
-            teacherI.Warning();
+            ((IHuman)studentI).Warning();
+            ((IHuman)teacherI).Warning();
         }
     }
 }

@@ -11,7 +11,11 @@ namespace Institution
         string ClassNumber { get; set; }
 
         string GetAwayFromTheAnswer(IHuman human);
-        void Warning();
+
+        void Warning()
+        {
+            Console.WriteLine($"Headteacher has been spotted");
+        }
     }
 
     class StudentI : IHuman
@@ -33,13 +37,8 @@ namespace Institution
 
         public string GetAwayFromTheAnswer(IHuman teacher)
         {
-            return $"Ученик(-ца) {this.FullName} сделал(-а) невероятное сальто и " +
+            return $"Ученик(-ца) {FullName} сделал(-а) невероятное сальто и " +
                    $"отвлек внимание учителя(-ьницы) {teacher.FullName}";
-        }
-
-        public void Warning()
-        {
-            Console.WriteLine($"Headteacher has been spotted by {this.FullName}");
         }
     }
 
@@ -71,13 +70,8 @@ namespace Institution
 
         public string GetAwayFromTheAnswer(IHuman student)
         {
-            return $"Учитель(-ница) {this.FullName} на вопрос ученика(-цы) {student.FullName} " +
+            return $"Учитель(-ница) {FullName} на вопрос ученика(-цы) {student.FullName} " +
                    $"выбрал(-а) тактику 'Ща два влеплю'";
-        }
-
-        public void Warning()
-        {
-            Console.WriteLine($"Headteacher has been spotted by {this.FullName}");
         }
     }
 }
