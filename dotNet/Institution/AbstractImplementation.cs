@@ -1,9 +1,8 @@
-using System.Buffers.Text;
-using System.Dynamic;
+using System;
 
 namespace Institution
 {
-    // Absctract class
+    // Base Absctract class
     abstract class AHuman
     {
         public string Gender;
@@ -13,6 +12,11 @@ namespace Institution
         public string ClassNumber;
 
         public abstract string GetAwayFromTheAnswer(AHuman human);
+
+        public void Warning()
+        {
+            Console.WriteLine($"Headteacher has been spotted by {this.FullName}");
+        }
 
         public AHuman(string gender, string age, string position, string fullName, string classNumber)
         {
@@ -45,6 +49,14 @@ namespace Institution
         {
             return $"Учитель(-ница) {this.FullName} на вопрос ученика(-цы) {student.FullName} " +
                    $"выбрал(-а) тактику 'Ща два влеплю'";
+        }
+
+        public new string Age
+        {
+            get
+            {
+                throw new System.Exception("Не Ваше дело!!!");
+            }
         }
 
     }
