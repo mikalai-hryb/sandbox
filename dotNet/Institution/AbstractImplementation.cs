@@ -15,7 +15,7 @@ namespace Institution
 
         public void Warning()
         {
-            Console.WriteLine($"Headteacher has been spotted by {this.FullName}");
+            Console.WriteLine($"Headteacher has been spotted by {FullName}");
         }
 
         public AHuman(string gender, string age, string position, string fullName, string classNumber)
@@ -35,7 +35,7 @@ namespace Institution
 
         public override string GetAwayFromTheAnswer(AHuman teacher)
         {
-            return $"Ученик(-ца) {this.FullName} сделал(-а) невероятное сальто и " +
+            return $"Ученик(-ца) {FullName} сделал(-а) невероятное сальто и " +
                    $"отвлек внимание учителя(-ьницы) {teacher.FullName}";
         }
     }
@@ -47,16 +47,13 @@ namespace Institution
         
         public override string GetAwayFromTheAnswer(AHuman student)
         {
-            return $"Учитель(-ница) {this.FullName} на вопрос ученика(-цы) {student.FullName} " +
+            return $"Учитель(-ница) {FullName} на вопрос ученика(-цы) {student.FullName} " +
                    $"выбрал(-а) тактику 'Ща два влеплю'";
         }
 
         public new string Age
         {
-            get
-            {
-                throw new Exception("Не Ваше дело!!!");
-            }
+            get { throw new Exception("Не Ваше дело!!!"); }
         }
 
     }

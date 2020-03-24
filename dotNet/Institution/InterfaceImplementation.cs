@@ -5,7 +5,7 @@ namespace Institution
     interface IHuman
     {
         string Gender { get; set; }
-        string Age { get; }
+        string Age { get; set; }
         string Position { get; set; }
         string FullName { get; set; }
         string ClassNumber { get; set; }
@@ -45,16 +45,12 @@ namespace Institution
     class TeacherI : IHuman
     {
         public string Gender { get; set; }
-
         private string age;
-
         public string Age
         {
             get { throw new Exception("Не Ваше дело!!!"); }
-
             set { age = value; }
         }
-
         public string Position { get; set; }
         public string FullName { get; set; }
         public string ClassNumber { get; set; }
