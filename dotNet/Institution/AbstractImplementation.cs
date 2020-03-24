@@ -55,7 +55,7 @@ namespace Institution
         {
             get
             {
-                throw new System.Exception("Не Ваше дело!!!");
+                throw new Exception("Не Ваше дело!!!");
             }
         }
 

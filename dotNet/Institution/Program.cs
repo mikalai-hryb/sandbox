@@ -15,6 +15,16 @@ namespace Institution
             // Console.WriteLine(teacherA.Age); // throw an error
             studentA.Warning();
             teacherA.Warning();
+
+            StudentI studentI = new StudentI("male", "7", "student", "Вася", "2Б");
+            TeacherI teacherI = new TeacherI("male", "26", "teacher", "Петр Сергеевич", "2Б");
+
+            Console.WriteLine(studentI.GetAwayFromTheAnswer(teacherI));
+            Console.WriteLine(teacherI.GetAwayFromTheAnswer(studentI));
+            Console.WriteLine(studentI.Age);
+            // Console.WriteLine(teacherI.Age); // throw an error
+            studentI.Warning();
+            teacherI.Warning();
         }
     }
 }
