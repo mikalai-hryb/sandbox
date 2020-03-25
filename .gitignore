@@ -8,3 +8,8 @@
 
 # Environment
 .venv
+
+# .NET
+[Bb]in/
+[Oo]bj/
+[Ll]og/
