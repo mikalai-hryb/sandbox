@@ -5,7 +5,10 @@ namespace Institution
     class RHuman
     {
         delegate void ThrowAssignErrorMessage(string property);
-        ThrowAssignErrorMessage throwAssignErrorMessage = property => throw new ArgumentException($"The property {property} can not be assigned!");
+        ThrowAssignErrorMessage throwAssignErrorMessage = property =>
+        {
+            throw new ArgumentException($"The property {property} can not be assigned!");
+        };
 
         private string age;
         public string Age
