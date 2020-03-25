@@ -1,0 +1,13 @@
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution.deps.json
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution.runtimeconfig.json
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution.runtimeconfig.dev.json
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution.dll
+/home/mikalai/projects/sandbox/dotNet/Institution/bin/Debug/netcoreapp3.1/Institution.pdb
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.csprojAssemblyReference.cache
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.csproj.CoreCompileInputs.cache
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.AssemblyInfoInputs.cache
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.AssemblyInfo.cs
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.dll
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.pdb
+/home/mikalai/projects/sandbox/dotNet/Institution/obj/Debug/netcoreapp3.1/Institution.genruntimeconfig.cache
