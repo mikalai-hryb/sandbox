@@ -1,0 +1,13 @@
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.csprojAssemblyReference.cache
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.csproj.CoreCompileInputs.cache
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.AssemblyInfoInputs.cache
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.AssemblyInfo.cs
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies.deps.json
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies.runtimeconfig.json
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies.runtimeconfig.dev.json
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies.dll
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Currencies.pdb
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.dll
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.pdb
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.genruntimeconfig.cache
