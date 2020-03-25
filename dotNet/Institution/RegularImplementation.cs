@@ -78,10 +78,7 @@ namespace Institution
         public TeacherR(string gender, string age, string position, string fullName, string classNumber)
             : base(gender, age, position, fullName, classNumber) {}
 
-        public new string Age
-        {
-            get { throw new Exception("Не Ваше дело!!!"); }
-        }
+        public new string Age => throw new Exception("Не Ваше дело!!!");
 
         public override string GetAwayFromTheAnswer(RHuman student)
         {
