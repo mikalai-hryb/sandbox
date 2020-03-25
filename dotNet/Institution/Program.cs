@@ -7,8 +7,8 @@ namespace Institution
         static void Main(string[] args)
         {
             Console.WriteLine("-- Abstract Implementation --");
-            StudentA studentA = new StudentA("female", "6", "student", "Аня", "1A" );
-            TeacherA teacherA = new TeacherA("female", "25", "teacher", "Светлана Ивановна", "1A" );
+            var studentA = new StudentA("female", "6", "student", "Аня", "1A" );
+            var teacherA = new TeacherA("female", "25", "teacher", "Светлана Ивановна", "1A" );
 
             Console.WriteLine(studentA.Gender);
             Console.WriteLine(studentA.Age);
