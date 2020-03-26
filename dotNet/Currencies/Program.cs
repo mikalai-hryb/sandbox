@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Currencies
 {
@@ -20,25 +21,44 @@ namespace Currencies
                 var response = await client.GetAsync(url);
                 Console.WriteLine($"Received response {response.StatusCode} from {url}");
             }
-            
+
+            var fileCurAbbreviations = new List<string>();
             if (File.Exists(textFilePath))
             {
-                string text = File.ReadAllText(textFilePath);
-                IEnumerable<string> curAbbreviations = text.Split(',').Select(s => s.Trim());
+                var fileCurContent = File.ReadAllText(textFilePath);
+                fileCurAbbreviations = fileCurContent.Split(',').Select(s => s.Trim()).ToList();
                 
-                foreach (var curAbbreviation in curAbbreviations)
+                foreach (var fileCurAbbreviation in fileCurAbbreviations)
                 {
-                    Console.WriteLine(curAbbreviation);
+                    Console.WriteLine(fileCurAbbreviation);
                 }
-                Console.WriteLine(text);
+                Console.WriteLine(fileCurContent);
             }
 
             var currencies = SendRequest(client, currenciesURL);
             HttpResponseMessage response = client.GetAsync(currenciesURL).Result;
             response.EnsureSuccessStatusCode();
             string result = response.Content.ReadAsStringAsync().Result;
-            Console.WriteLine(result);
-
+            // Console.WriteLine(result);
+            var allCurrencies = JsonConvert.DeserializeObject<List<Currency>>(result);
+            var filteredSortedCurrencies = allCurrencies
+                .Where(i =>  fileCurAbbreviations.Contains(i.Cur_Abbreviation))
+                .OrderBy(i => i.Cur_Abbreviation)
+                .ToList();
+            foreach (var i in filteredSortedCurrencies)
+            {
+                Console.WriteLine(i);
+            }
+            
+            
+            var filteredSortedCurrenciesSJSON=  JsonConvert.SerializeObject(filteredSortedCurrencies, Formatting.Indented);
+            Console.WriteLine(filteredSortedCurrenciesSJSON);
+            // using (FileStream fs = new FileStream("/home/mikalai/projects/sandbox/dotNet/Currencies/abc.json", FileMode.OpenOrCreate))
+            // {
+                // var output=  JsonConvert.DeserializeObject<List<Currency>>(filteredCurrencies);
+                // Console.WriteLine("Data has been saved to file");
+            // }
+            System.IO.File.WriteAllText("/home/mikalai/projects/sandbox/dotNet/Currencies/abc.json", filteredSortedCurrenciesSJSON);
 
         }
     }

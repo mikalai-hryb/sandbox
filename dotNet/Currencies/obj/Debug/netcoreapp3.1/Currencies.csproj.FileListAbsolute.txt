@@ -11,3 +11,5 @@
 /home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.dll
 /home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.pdb
 /home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.genruntimeconfig.cache
+/home/mikalai/projects/sandbox/dotNet/Currencies/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/mikalai/projects/sandbox/dotNet/Currencies/obj/Debug/netcoreapp3.1/Currencies.csproj.CopyComplete
