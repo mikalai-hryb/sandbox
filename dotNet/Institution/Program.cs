@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Institution
 {
@@ -82,6 +83,44 @@ namespace Institution
                 Console.WriteLine($"It's expected that '{exc.Message}'");
             }
             Console.WriteLine("");
+            
+            Console.WriteLine("11111111111111111111111111111111111111111111111111111111");
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+            Environment.SetEnvironmentVariable("CONSUL_ENV_DATACENTER", "qa1");
+            Environment.SetEnvironmentVariable("DOMAIN", "shipment-service");
+            Environment.SetEnvironmentVariable("ENVIRONMENT", "qa1");
+            var _environment = "qa1";
+            
+            string connectionString;
+            if (_environment == "local")
+            {
+                Console.WriteLine("22222222222222222222222222222222222222222222222222222");
+                connectionString = Environment.GetEnvironmentVariable("DB_CONTEXT");
+            }
+            else
+            {
+                Console.WriteLine("33333333333333333333333333333333333333333333333333333");
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "/bin/bash",
+                    Arguments = "-c \". /home/mikalai/projects/sandbox/dotNet/Institution/helpers/export_consul_config.sh\"",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = false,
+                    CreateNoWindow = false
+                };
+                Process p = Process.Start(psi);
+                p.WaitForExit();
+
+                connectionString = String.Format("Host={0};Port={1};Database={2};User Id={3};Password={4};",
+                    Environment.GetEnvironmentVariable("DBHOST"),
+                    Environment.GetEnvironmentVariable("DBPORT"),
+                    Environment.GetEnvironmentVariable("DBNAME"),
+                    Environment.GetEnvironmentVariable("DBUSER"),
+                    Environment.GetEnvironmentVariable("DBPASS")
+                );
+            }
+            Console.WriteLine(connectionString);
         }
     }
 }

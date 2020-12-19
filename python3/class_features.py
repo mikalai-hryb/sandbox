@@ -7,6 +7,7 @@ class Worker:
 		print(msg)
 		print('>>')
 
+
 class Сustomer:
 	def __init__(self, worker, first_name, last_name, expose_data=False):
 		self._worker = worker

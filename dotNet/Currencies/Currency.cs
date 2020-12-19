@@ -24,6 +24,6 @@ public class Currency
     
     public override string ToString()
     {
-        return $"{Cur_Abbreviation}, {Cur_ID}, {Cur_Name}";
+        return $"{Cur_ID}, {Cur_Abbreviation}, {Cur_Name}";
     }
 }

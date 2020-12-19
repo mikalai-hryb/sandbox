@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "29uajbK/dB8TgbKwSKCzN7uZnhVNw8m/TBVQAvkOUEJuVFcY4T+YD+LyAv7CxpeiFShIEnLHaNZuMD+vF7rSDA==",
+  "success": true,
+  "projectFilePath": "/home/mikalai/projects/sandbox/dotNet/Currencies/Currencies.csproj",
+  "expectedPackageFiles": [
+    "/home/mikalai/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
