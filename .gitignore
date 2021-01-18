@@ -1,10 +1,16 @@
+# Environment
+.venv
+
+# Pycharm
+.idea/
+
 # Terraform
 .terraform/
 *.tfstate
 *.tfstate.*
 
-# Pycharm
-.idea/
+# UI
+/node_modules
 
-# Environment
-.venv
+# Testing
+/coverage
