@@ -1,0 +1,131 @@
+15 - Sending email via script [1:58:42]
+16 - Curl [2:05:15]
+17 - Professional menus [2:12:42]
+18 - Wait for filesystem events with inotify [2:22:12]
+19 - Introduction to grep [2:31:12]
+20 - Introduction to awk [2:41:35]
+21 - Introduction to sed []
+22 - Debugging Bash Scripts []
+
+ls - stands for list
+ls -alh (all, long listing format, human-readable)
+
+chmod - change the mode
+chmod +x my_file.txt
+d - directory
+c - character device
+b - block device
+
+
+Every file and directory is assigned 3 types of owner
+- User
+- Group
+- Other
+
+Every file and directory has following 3 permissions defined for all the 3 owners described above:
+- Read
+- Write
+- Execute
+
+> file - replace the content of the file
+>> file - append to the file
+
+1 - stdout (1>file1.txt)
+2 - stderr (2>file2.txt)
+
+cat <<- HeredocDelimiter
+bla
+HeredocDelimiter
+
+HeredocDelimiter is often EOF
+
+if statement:
+-eq - equal
+-ne - not equal
+-gt - greater than
+-ge - greater or equal
+-lt - less than
+-a - AND
+-o - OR
+
+Inputs:
+$0 - script name with relative path
+$1 - the first argument that has been passed to the script 'my_script.sh the_first_arg'
+$@ - all arguments, unlimited number of inputs
+
+https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba
+Recommendation: always use [].
+There are POSIX equivalents for every [[ ]] construct I've seen.
+If you use [[ ]] you:
+* lose portability
+* force the reader to learn the intricacies of another bash extension. [ is just a regular command with a weird name, no special semantics are involved.
+
+Snakecase
+    variable_one
+Pascalcase [pæsˈkæl]
+    VariableOne
+Camelcase
+    variableOne
+Uppercase
+    VARIABLE_ONE
+    VARIABLEONE
+Lowercase
+    variable_one
+    variableone
+
+bash -x <filename.sh> - can help you debug the script or you can have "#! /bin/bash -x"
+
+$0 specifies the name of the script to be invoked.
+$1-$9 stores the names of the first 9 arguments or can be used as the arguments' positions.
+$# specifies the total number (count) of arguments passed to the script.
+$* stores all the command line arguments by joining them together.
+$@ stores the list of arguments as an array.
+$? specifies the process ID of the current script.
+$$ specifies the exit status of the last command or the most recent execution process.
+$! shows ID of the last background job.
+
+command "python bla.py &" runs the python script and prints the PID
+
+Поток данных (англ. stream) в программировании — абстракция,
+используемая для чтения или записи файлов, сокетов и т. п. в единой манере.
+
+Файловый дескриптор — это неотрицательное целое число. Когда создается новый поток
+ввода-вывода, ядро возвращает процессу, создавшему поток ввода-вывода,
+его файловый дескриптор.
+
+Ownership and Permissions
+Linux being a multi-user system uses permissions and ownership for security.
+Every file and directory is assigned 3 types of owner
+- User (owner, by default the person that has created the file)
+- Group (all users that belongs to a Linux group)
+- Other (everybody else)
+
+Every file and directory has 3 permissions defined for all 3 owners
+- Read (read bit)
+    - file: open and read
+    - directory: list the content of the directory
+- Write (write bit)
+    - file: modify the content
+    - directory:  add, remove and rename files stored in the directory
+- Execute (execute bit)
+    - file: run the file
+    - directory: enter the directory
+
+Add a permission to a file or directory
+chmod <permissions> filename
+
+<< u || g || o ||a >< + || - || = >< r &| w &| x>>
+u/g/o/a - user/group/other/all
++/-/= - add/remove/set
+r/w/x - read/write/execute
+
++x add executable permissions for all owners
+-rx remove read and executable permissions for all owners
+u+w add write permissions for user(owner) only
+
+chown user_name file - change the ownership of the file
+chown user_name:group_name file - change the ownership of the file and the group
+chgrp group_name file - change the group ownership
+
+The file /etc/group contains all the groups defined in the system
+You can use the command "groups" to find all the groups you are a member of
