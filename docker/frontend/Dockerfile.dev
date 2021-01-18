@@ -1,0 +1,16 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+#docker run \
+#-it \
+#--publish 3000:3000 \
+#--volume $(pwd):/app \
+#--volume /app/node_modules \
+#35ea7859ea92635c9db69f239de38954d1463277c99e725449955af8602b5bde

@@ -1,0 +1,48 @@
+Docker is a platform or ecosystem around creating and running containers
+a container is a program with its own isolated set of hardware resources (little space of memory,
+little space of networking technology, little space of hard drive space)
+
+when we talk about the image we talk about the FS(file system) snapshot
+
+A program does not speak to the physical device
+The program interacts with kernel with help of system calls (hey kernel, I want to do this stuff, they are like function invocations)
+the kernel takes this information and interacts with the physical devices.
+There are 2 important features in Linux that allow to use and isolate containers.
+They are Namespacing and Control Groups
+Namespacing isolates resources per processor or group of processors (hostnames, users, processes, network, harddrive)
+Control Groups limits amount of resources used per processor (memory, cpu usage, network bandwidth, hard drive i/o)
+a container is really a process or a set of processes  that have a grouping of resources specifically assigned to it
+
+image is a filesystem snapshot(set of specific files/folders) with starup command
+We take an image and turn it into a container
+kernel isolates a little section of the hard drive and make it available to just this container
+
+
+"." (dot) specifies "build context"
+"build context" is essentially the set of files and folders that belong to the project.
+It's a set of files and folders that we want to kind of encapsulate or wrap in the container.
+
+directory - is a file system concept (telephone dictionary is an analogy).
+Most likely when you use the terminal it's something that lists other directories and/or files
+folder - is most likely GUI term (office folder is an analogy).
+When you think about a folder you think about something that keeps your files or other folders
+
+<> - required
+[] - optional
+image_identifier = image_id || image_name
+docker run <image_name> [command] = docker create <image_identifier> + docker start [-a] <container_id>
+docker ps
+docker system prune
+docker logs <container_id>
+docker stop <container_id> # SIGTERM
+docker kill <container_id> # SIGKILL
+docker exec -it <docker_id> <command> # redis-cli || bash || sh
+docker run -it <image_identifier> sh # another way to poke around
+docker run --publish 5000:8080 [--detach] <image_identifier>
+docker build <build_context> [--file Dockerfile.my]
+docker commit -c 'CMD ["redis-server"]' <container_id> # creates an image from the container and returns the image id
+
+docker-compose up
+docker-compose up --build
+docker-compose up --detach
+docker-compose down
