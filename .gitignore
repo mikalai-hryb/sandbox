@@ -2,15 +2,15 @@
 .venv
 
 # Pycharm
-.idea/
+.idea
 
 # Terraform
-.terraform/
+**/.terraform
 *.tfstate
 *.tfstate.*
 
 # UI
-/node_modules
+**/node_modules
 
 # Testing
-/coverage
+**/coverage
