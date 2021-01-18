@@ -2,17 +2,22 @@ os: linux
 language: generic
 services:
   - docker
+
 before_install:
-  - docker build --tag mikalaihryb/frontend --file ./docker/frontend/Dockerfile ./docker/frontend
+  - docker build --tag mikalaihryb/frontend --file ./docker/frontend/Dockerfile.dev ./docker/frontend
+
 script:
   - docker run --env CI=true mikalaihryb/frontend npm run test
+
 deploy:
   on:
     branch: master
+
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   region: "us-west-1"
+
   app: "docker-frontend"
   env: "DockerFrontend-env"
   bucket_name: "elasticbeanstalk-us-west-1-231729940517"
