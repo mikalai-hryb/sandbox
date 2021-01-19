@@ -11,6 +11,7 @@
 
 # UI
 **/node_modules
+.eslintcache
 
 # Testing
 **/coverage

@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Welcome to React.</h1>
+          <h1>Welcome to My React.</h1>
           <Link to="/">Home</Link>
           <Link to="/other-page">Other Page</Link>
         </header>
